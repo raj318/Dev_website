@@ -1,11 +1,36 @@
 body {
-	background-color: powderblue;
+	background-image: url("high_resol_earth.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
-h1 {
-	color: blue;
+h3 {
+	color: white;
+	text-align: center;
 }
 
 p {
-	color: brown;
+	color: skyblue;
+	text-align: center;
+	display: inline;
+	padding-right: 150px;
+}
+div {
+	display: inline;
+}
+
+#about {
+	float: right;
+}
+
+#blog {
+	float: right;
+}
+
+#resume {
+	float: right;
+}
+
+#contact {
+	float: right;
 }
