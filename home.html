@@ -3,12 +3,49 @@
 <head>
 	<link rel="stylesheet" href="home_styles.css">
  </head>
-<body>
-<div>
-<p id="about">About</p>
-<p id="blog">Blog</p>
-<p id="resume">Resume</p>
-<p id="contact">Contact me</p>
+<body onload="init()" onscroll="scrollEffect()">
+<script src="javascript1.js"></script>
+<div id="topbar">
+<li class="htab" id="contact" onclick="contact()" onmouseover="setBlue(this)" onmouseout="unsetBlue(this)">Contact me</li>
+<li class="htab" id="resume" onclick="resume()" onmouseover="setBlue(this)"  onmouseout="unsetBlue(this)">Resume</li>
+<li class="htab" id="blog" onclick="blog()" onmouseover="setBlue(this)"  onmouseout="unsetBlue(this)">Blog</li>
+<li class="htab" id="about" onclick="about()" onmouseover="setBlue(this)"  onmouseleave="unsetBlue(this)">About</li>
+</div>
+
+<!--<div id="body">
+</div> -->
+
+
+<div  id="aboutc" class="pages">
+<pre>Adding some text here as this place looks very empty!
+</br>
+
+some text here </br>
+some text here </br>
+just for testing </br>
+</br>
+
+will add lot more later
+</br>
+</pre>
+</div>
+
+<div id="blogc" class="pages">
+<p>
+this is blog section
+</p>
+</div>
+
+<div id="resumec" class="pages">
+<p>
+this is resume section
+</p>
+</div>
+
+<div id="contactc" class="pages">
+<p>
+this is contact section
+</p>
 </div>
 
 
