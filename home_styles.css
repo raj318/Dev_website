@@ -1,31 +1,59 @@
 body {
-	background-image: url("high_resol_earth.jpg");
+	background-image: url("earth3.jpg");
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-position: 400px 300px;
+	background-size: 343px 342px;
+	min-height: 100%;
+	background-color: black;
+	background-attachment: fixed;
 }
 
-p {
-	color: skyblue;
+html {
+	#height: 100%;
+	color: white;
+}
+
+.htab {
+	color: white;
+	#text-align: center;
+	padding: 1px;
+	padding-right: 75px;
+	padding-left: 75px;
+	display: inline;
+	float: right;
+}
+
+#topbar {
+	width: 100%;
+	display: block;
+	position: fixed;
+	margin-top: 20px;
+	white-space: nowrap;
+}
+
+.pages {
+	width: 100%;
+	height: 900px;
 	text-align: center;
-	display: inline;
-	padding-right: 150px;
-}
-div {
-	display: inline;
+	color: white;
+	display: block;
+	padding-top: 50px;
 }
 
-#about {
+#contact, #resume, #blog, #about {
 	float: right;
 }
 
-#blog {
-	float: right;
+
+
+#aboutc, #blogc, #resumec, #contactc {
+	width: 100%;
+	display: flex;
+	color: white;
 }
 
-#resume {
-	float: right;
-}
-
-#contact {
-	float: right;
+#body {
+	width: 100%;
+	display:flex;
+	color: white;
 }
