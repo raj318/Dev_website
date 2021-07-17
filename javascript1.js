@@ -1,4 +1,7 @@
 var index = 0;
+var lastScrollTop = 0;
+var pos = -4000;
+
 indexes = {
 	0:"about",
 	1:"blog",
@@ -13,8 +16,6 @@ function resume() {
 		index = 2;
 	}
 	move(index);
-	//window.scroll({top: (index-1)*940, left: 0, behavior: 'smooth'});
-	//temp();
 }
 
 function blog() {
@@ -25,8 +26,6 @@ function blog() {
 		index = 1;
 	}
 	move(index);
-	//window.scroll({top: (index-1)*930, left: 0, behavior: 'smooth'});
-	//temp();
 }
 
 function contact(){
@@ -35,19 +34,23 @@ function contact(){
 		setWhite(index);
 		setGray(index);
 		index = 3;
-		
 	}
 	move(index);
-	//window.scroll({top: (index-1)*940, left: 0, behavior: 'smooth'});
-	//temp();
 }
-
 function init(){
 	//document.getElementById("about").style.color = "#808080";
 	index = 0;
 	setGray(index);
 	move(0);
-	//window.scroll({top: 0, left: 0, behavior: 'smooth'});
+	const canvas = document.querySelector("#canvas");
+	if(!canvas.getContext){
+		return;
+	}
+	var img = document.getElementById("tmoon");
+	let ctx = canvas.getContext('2d');
+	var st = window.pageYOffset || document.documentElement.scrollTop;
+	var temp = (pos+st)/20;
+	ctx.drawImage(img, 0, temp, 800, 515);
 	
 }
 
@@ -57,17 +60,40 @@ function setGray(index){
 
 function move(index){
 	window.scroll({top: index*940, left: 0, behavior: 'smooth'})
+	
+	//const canvas = document.querySelector("#canvas");
+	//let ctx = canvas.getContext('2d');
+	//ctx.clearRect(0, 0, 1000, 1000);
+	//var img = document.getElementById("tmoon");
+	//ctx.drawImage(img, 0, -1*index*10, 300, 200);
 }
 
-function temp(){
-	document.getElementById("contactc").innerHTML = document.body.scrollTop + document.documentElement.scrollTop;
-}
+var lastScrollTop = 0;
+var pos = -7000;
+
+window.addEventListener("scroll", function(){
+	var spix = document.body.scrollTop + document.documentElement.scrollTop;
+	const speed=1;
+	var st = window.pageYOffset || document.documentElement.scrollTop;
+	const canvas = document.querySelector("#canvas");
+	let ctx = canvas.getContext('2d');
+	ctx.clearRect(0, 0, 1000, 1000);
+	var img = document.getElementById("tmoon");
+	console.log(st, lastScrollTop);
+	temp = (pos+st)/20;
+    ctx.drawImage(img, 0, temp, 800, 515);
+	console.log("Down", pos);
+	console.log("scrolltop: ", spix);
+	lastScrollTop = st <= 0 ? 0 : st;
+	},
+	false
+);
 
 function about() {
 	if (index !=0){
 		setWhite(index);
 		index = 0;
-		init();
+		setGray(index);
 	}
 	move(index);
 }
@@ -91,7 +117,7 @@ function scrollEffect(){
 		index = 3;
 		setGray(index);
 	}
-}
+};
 
 function setBlue(self){
 	self.style.color = "#808080";
