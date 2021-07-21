@@ -60,13 +60,18 @@ html {
 	display: none;
 }
 
-#canvas {
-	width: 20%;
-	height: 400px;
+#moon {
+	width: 300px;
+	height: 300px;
 	position: fixed;
-	margin-top: 38%;
+	margin-top: 32%;
 	margin-left: 38%;
 	border:1px solid #d3d3d3;
 	border-radius: 50%;
+	background-image: url("fmoon1.jpg");
+	background-position: -140px 10px;
+	border-radius: 100%;
+	background-size: 600px 600px;
+	background-position: repeat-y;
+	box-shadow: 0, 0, 10px, #fff;
 }
-
